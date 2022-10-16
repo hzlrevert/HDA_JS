@@ -6,6 +6,11 @@ const pass = "admin";
 var ciclo = 1;//while de login
 var i=0;//bloqueo
 
+let Servidor = new Array();
+
+
+
+
 //login
 
 function loguearse(){
@@ -89,7 +94,7 @@ while(!finalizar_solicitud)
 }
     if(solicitud != "" )
     {
-        let resp = confirm("Finalizar la subscripcion a:" +solicitud);
+        let resp = confirm("Finalizar la subscripcion a:" +/*solicitud*/Servidor);
         if (resp){
             alert("Pronto te enviaremos el acceso");
         }
@@ -105,22 +110,32 @@ function obtenerTitulo (codigo)
     {
         case "1":
             titulo = "ARMA III";
+            Servidor.push('ARMA III');
+            console.log(Servidor);
             break;
 
         case "2":
             titulo = "PROJECT ZOMBOID";
+            Servidor.push('PROJECT ZOMBOID');
+            console.log(Servidor);
             break;
 
         case "3":
             titulo = " HELL LET LOOSE";
+            Servidor.push('HELL LET LOOSE');
+            console.log(Servidor);
             break;
 
         case "4":
             titulo = "READY OR NOT";
+            Servidor.push('READY OR NOT');
+            console.log(Servidor);
             break;
         
         case "5":
             titulo ="DEADSIDE";
+            Servidor.push('DEADSIDE');
+            console.log(Servidor);
             break;
         
         default:
@@ -133,5 +148,11 @@ function obtenerTitulo (codigo)
 
 loguearse();
 
-  
 
+
+
+
+
+
+
+  
