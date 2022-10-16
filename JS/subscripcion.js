@@ -94,14 +94,21 @@ while(!finalizar_solicitud)
 }
     if(solicitud != "" )
     {
-        let resp = confirm("Finalizar la subscripcion a:" +/*solicitud*/Servidor);
-        if (resp){
+        let finalizacion = prompt (Servidor + "\n 1-confirmar la subscripcion\n 2-ELiminar elemento" );
+        //let resp = confirm("Finalizar la subscripcion a:" +/*solicitud*/Servidor);
+        if (finalizacion == 1){
             alert("Pronto te enviaremos el acceso");
+        }
+        else{
+            eliminarELemento(Servidor);
         }
     }
 
 }
-
+function eliminarELemento()
+{
+prompt(Servidor);
+}
 
 function obtenerTitulo (codigo)
 {
