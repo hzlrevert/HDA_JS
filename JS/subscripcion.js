@@ -105,9 +105,14 @@ while(!finalizar_solicitud)
     }
 
 }
-function eliminarELemento()
+function eliminarELemento(Servidor)
 {
-prompt(Servidor);
+    let eliminar = prompt (Servidor + "\n Ingrese el numero de elemento a eliminar" );
+    Servidor.splice(eliminar,1);
+    alert ("Se elimino el elemento");
+    alert (Servidor);
+    alert("Pronto te enviaremos el acceso");
+
 }
 
 function obtenerTitulo (codigo)
@@ -152,6 +157,10 @@ function obtenerTitulo (codigo)
     return titulo;
 
 }
+
+
+
+
 
 loguearse();
 
