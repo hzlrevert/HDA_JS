@@ -163,12 +163,3 @@ function obtenerTitulo (codigo)
 
 
 loguearse();
-
-
-
-
-
-
-
-
-  
