@@ -146,6 +146,13 @@ p {
     background-color: var(--terciario);
     color: var(--primario); }
 
+.SEC {
+  display: inline-block;
+  padding: 20px;
+  background-color: crimson;
+  position: fixed;
+  bottom: 0; }
+
 #secciones {
   display: flex;
   justify-content: space-between;
