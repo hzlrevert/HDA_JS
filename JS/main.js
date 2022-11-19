@@ -40,3 +40,6 @@ function addCarrito( id ) {
 function eliminar( id ) {   
     gestor.eliminarArticulo( id );
 }
+function comprar() {   
+    gestor.comprarCarrito( );
+}

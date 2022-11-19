@@ -88,8 +88,9 @@
                     nombre : nombre_prod,
                     precio: precio_prod,
                     img : img_prod,
-                    cantidad : cant_prod ,
-                descripcion : descripcion_prod} = producto;
+                    cantidad : cant_prod,
+                descripcion : descripcion_prod
+            } = producto;
 
 
     
@@ -119,11 +120,11 @@
     }
 
     
-    buscar( q ) { 
+   /* buscar( q ) { 
 
         let resultado = productos.filter( producto => producto.nombre.toLowerCase().includes( q.toLowerCase() ) || producto.descripcion.toLowerCase().includes( q.toLowerCase() ));      
         this.cargarProductos( resultado );                   
-    }
+    }*/
 
 
 
@@ -238,7 +239,7 @@
             const row = document.createElement('div');
             row.classList.add('row');
             
-            total += parseInt(precio);
+            total += parseInt(precio*cantidad);
 
             row.innerHTML = `
                 
@@ -263,6 +264,8 @@
                                 <i class="fa-solid fa-square-minus fa-2x"></i>
                             </a>
                         </div>
+                        
+
             `;
     
             
@@ -311,7 +314,7 @@
     }
     
     //comprar
-    comprarCarrito( id ) { 
+    comprarCarrito() { 
 
         Swal.fire({
             title: '"Esta seguro de finalizar la compra?"',
@@ -324,11 +327,13 @@
             
             if (result.isConfirmed) 
             {
-                carrito = carrito[null];
+                this.mostrar_notificacion("Gracias por su compra! Pronto nos comunicaremos para darte los accesos",5000,"bottom");
+                carrito.length =[];
+                
                 this.actualizarCarrito();
 
-                this.mostrar_notificacion("Gracias por su compra! Pronto nos comunicaremos para darte los accesos",2000,"bottom");
-
+                
+                
             }            
           })         
           
