@@ -12,7 +12,6 @@
                 "nombre": "ARMA 3",
                 "descripcion": "Adquiere tu membresía en arma 3",
                 "precio": 300,
-                "stock": 10,
                 "img": "arma.jpg",
                 "destacado": 1
             },
@@ -21,7 +20,6 @@
                 "nombre": "PROJECT ZOMBOID",
                 "descripcion": "Adquiere tu membresía en PZ",
                 "precio": 200,
-                "stock": 5,
                 "img": "pz.webp",
                 "destacado": 1
             },
@@ -31,7 +29,6 @@
                 "nombre": "HELL LET LOOSE",
                 "descripcion": "Adquiere tu membresía en HLL",
                 "precio": 200,
-                "stock": 10,
                 "img": "hll.webp",
                 "destacado": 1
             },
@@ -40,7 +37,6 @@
                 "nombre": "READY OR NOT",
                 "descripcion": "Adquiere tu membresía en RON",
                 "precio": 300,
-                "stock": 5,
                 "img": "ron.jpg",
                 "destacado": 1
             },
@@ -49,10 +45,15 @@
                 "nombre": "DEADSIDE",
                 "descripcion": "Adquiere tu membresía en DEADSIDE",
                 "precio": 200,
-                "stock": 15,
                 "img": "dead.jpg",
                 "destacado": 1
             },
+            
+            
+            //agregar nuevos productos
+            //reemplazar por link de mpago
+
+
         ]
         
 
@@ -76,7 +77,7 @@
 
         if( productos.length === 0 ) {
 
-            this.mostrarHeader('No se han encontrado productos para su búsqueda');
+            this.mostrarHeader('No hay productos');
             return false;
         } 
         else {          
@@ -103,7 +104,7 @@
     
                                         <div class="p-3 d-flex flex-column w-60 h-150">
                                             <h3 >${nombre_prod}</h3>                                            
-                                            <p>${descripcion_prod.substring(0,120)}</p>
+                                            <p class ="descripcion">${descripcion_prod.substring(0,120)}</p>
                                         </div>
     
                                         <div class="d-flex align-items-center justify-content-center flex-column w-20 h-150">
@@ -284,7 +285,7 @@
     }
 
   
-   
+   //eliminar
     eliminarArticulo( id ) { 
 
         Swal.fire({
@@ -309,7 +310,32 @@
           
     }
     
-    
+    //comprar
+    comprarCarrito( id ) { 
+
+        Swal.fire({
+            title: '"Esta seguro de finalizar la compra?"',
+            showCancelButton: true,
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si',
+            cancelButtonText: `Cancelar`,
+            
+          }).then((result) => {
+            
+            if (result.isConfirmed) 
+            {
+                carrito = carrito[null];
+                this.actualizarCarrito();
+
+                this.mostrar_notificacion("Gracias por su compra! Pronto nos comunicaremos para darte los accesos",2000,"bottom");
+
+            }            
+          })         
+          
+    }
+
+
+
     guardarCarrito() { 
        
         localStorage.setItem(key_carrito, JSON.stringify( carrito ));

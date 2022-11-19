@@ -64,7 +64,7 @@ a {
   cursor: url(../img/cursor.png), auto; }
 
 /*text*/
-p {
+.p {
   color: var(--colortext);
   font-size: var(--tam-tex); }
 
